@@ -12,9 +12,15 @@ namespace eSeries.Models
     {
         [Key] //our key is our Id. By default usually
         public int Id { get; set; }
-        public string LogoURL { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+
+		[Display(Name = "Logo")]
+		public string LogoURL { get; set; }
+
+		[Display(Name = "Streamer name")]
+		public string Name { get; set; }
+
+		[Display(Name = "Streamer's description")]
+		public string Description { get; set; }
 
         //Relationships
         public List<Serie> Series { get; set; }

@@ -8,6 +8,8 @@ namespace eSeries.Data.Enums
     public enum SerieCategory
     {
         Drama,
+        Thriller,
+        Fantasy,
         Comedy,
         Horror,
         Crime,

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using eSeries.Data.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace eSeries.Models
 {
@@ -11,14 +12,27 @@ namespace eSeries.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public double Price { get; set; }
-        public string ImageURL { get; set; } 
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public SerieCategory SerieCategory { get; set; } //enum imported from eSeries/Data/Enums/SerieCategory.cs
+		[Display(Name = "Name")]
+		public string Name { get; set; }
+
+		[Display(Name = "Description")]
+		public string Description { get; set; }
+
+		[Display(Name = "Price")]
+		public double Price { get; set; }
+
+		[Display(Name = "Image URL")]
+		public string ImageURL { get; set; }
+
+		[Display(Name = "Start availability")]
+		public DateTime StartDate { get; set; }
+
+		[Display(Name = "End of availability")]
+		public DateTime EndDate { get; set; }
+
+		[Display(Name = "Category")]
+		public SerieCategory SerieCategory { get; set; } //enum imported from eSeries/Data/Enums/SerieCategory.cs
 
         //Relationship
         public List<Actor_Serie> Actors_Series { get; set; }

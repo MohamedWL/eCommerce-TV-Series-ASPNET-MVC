@@ -12,8 +12,13 @@ namespace eSeries.Models
     {
         [Key] //our key is our Id. By default usually
         public int Id { get; set; }
+        [Display(Name = "Profile Picture URL")] //useful for when we want to use the header names in the view
         public string ProfilePictureURL { get; set; }
+
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
+
+        [Display(Name = "Biography")]
         public string Bio { get; set; }
 
         //Relationship

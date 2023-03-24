@@ -1,0 +1,62 @@
+﻿@*Define the model which will be a list of actors*@
+@model IEnumerable<Streamer>
+
+
+@*Define viewData (the data we want to have in the browser tab and define the properties)*@
+@{
+	ViewData["Title"] = "List of Streamers";
+}
+
+@*Our code (What you'll see in /Actors on your browser in our case a list)*@
+<div class="row">
+	<div class="col-md-8 offset-md-2" style="width:1440px;margin-left:15px">
+
+		<table class="table" style="border-color:red">
+			<thead>
+				<tr>
+					<th>@Html.DisplayNameFor(model => model.LogoURL)</th>
+					<th>@Html.DisplayNameFor(model => model.Name)</th>
+					<th>@Html.DisplayNameFor(model => model.Description)</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model) //loops throught the IEnumerable
+				{
+					<tr>
+						<td class="align-middle" style="width:170px">
+							<img class="rounded" src="@item.LogoURL" alt="@item.Name" style="max-width: 150px" />
+						</td>
+						<td class="align-middle" style="width:150px;">
+							@Html.DisplayFor(modelItem => item.Name)
+						</td>
+						<td class="align-middle" style="width:750px">
+							@Html.DisplayFor(modelItem => item.Description)
+						</td>
+						<td class="align-middle" style="width:300px;align-items:center;justify-content:center">
+							<a class="btn btn-outline-primary"> <i class="bi bi-pencil-square"></i> Edit </a>
+							<a class="btn btn-outline-info"> <i class="bi bi-eye"></i> Details </a>
+							<a class="btn btn-danger text-white"> <i class="bi bi-trash"></i> Delete </a>
+						</td>
+					</tr>
+				}
+			</tbody>
+
+
+		</table>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
