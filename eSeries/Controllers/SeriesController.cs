@@ -14,7 +14,7 @@ namespace eSeries.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allSeries = await _context.Series.Include(n => n.Streamer).ToListAsync(); //the data variable captures the files when you go to the corresponding page, you need a view though
+            var allSeries = await _context.Series.Include(n => n.Streamer).OrderBy(n => n.Name).ToListAsync(); //the data variable captures the files when you go to the corresponding page, you need a view though
             return View(allSeries);
         }
     }
